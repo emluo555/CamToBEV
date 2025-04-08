@@ -1,0 +1,25 @@
+nohup: ignoring input
+======
+Loading NuScenes tables for version v1.0-trainval...
+23 category,
+8 attribute,
+4 visibility,
+64386 instance,
+12 sensor,
+10200 calibrated_sensor,
+2631083 ego_pose,
+68 log,
+850 scene,
+34149 sample,
+2631083 sample_data,
+1166187 sample_annotation,
+4 map,
+Done loading in 30.658 seconds.
+======
+Reverse indexing ...
+Done reverse indexing in 8.3 seconds.
+======
+Traceback (most recent call last):
+  File "/scratch/gpfs/el5267/CamToBEV/nuscenes-val-filter.py", line 64, in <module>
+    os.remove(sweep_filepath)
+FileNotFoundError: [Errno 2] No such file or directory: './datasets/nuscenes-trainval/sweeps/RADAR_FRONT_RIGHT/n015-2018-07-18-11-07-57+0800__RADAR_FRONT_RIGHT__1531883530444336.pcd'

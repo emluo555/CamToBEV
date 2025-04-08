@@ -112,6 +112,10 @@ def display_final_results(train_task, dset, obj_metrics, day_metrics, rain_metri
                           map_metrics, day_map_metrics, rain_map_metrics, night_map_metrics,
                           mean_map_iou, map_ious, day_mean_map_iou, day_map_ious,
                           rain_mean_map_iou, rain_map_ious, night_mean_map_iou, night_map_ious, do_drn_val_split):
+    print("day stuff ", day_metrics, day_map_metrics, day_mean_map_iou, day_map_ious)
+    print("rain stuff? ", rain_metrics, rain_map_metrics,rain_mean_map_iou,rain_map_ious)
+    print("night stuff? ", night_metrics, night_map_metrics,night_mean_map_iou,night_map_ious)
+    print("do_drn_val_split ", do_drn_val_split)
 
     print("##################   FINAL RESULTS   ###################")
     print("##################   OBJ IOUs  ###################")
@@ -123,14 +127,11 @@ def display_final_results(train_task, dset, obj_metrics, day_metrics, rain_metri
             ["DAY", format_value(day_metrics['obj_iou']), format_value(day_metrics['obj_0_20_iou']),
              format_value(day_metrics['obj_20_35_iou']),
              format_value(day_metrics['obj_35_50_iou'])] if do_drn_val_split else ["DAY", "-", "-", "-", "-"],
-
-            ["RAIN", format_value(rain_metrics['obj_iou']), format_value(rain_metrics['obj_0_20_iou']),
-             format_value(rain_metrics['obj_20_35_iou']),
-             format_value(rain_metrics['obj_35_50_iou'])] if do_drn_val_split else ["RAIN", "-", "-", "-", "-"],
-
-            ["NIGHT", format_value(night_metrics['obj_iou']), format_value(night_metrics['obj_0_20_iou']),
+             # no rain
+             ["NIGHT", format_value(night_metrics['obj_iou']), format_value(night_metrics['obj_0_20_iou']),
              format_value(night_metrics['obj_20_35_iou']),
              format_value(night_metrics['obj_35_50_iou'])] if do_drn_val_split else ["NIGHT", "-", "-", "-", "-"]
+
         ]
 
         headers = ["", "mean obj_IoU", "0-20m obj_IoU", "20-35m obj_IoU", "35-50m obj_IoU"]
@@ -152,12 +153,12 @@ def display_final_results(train_task, dset, obj_metrics, day_metrics, rain_metri
              format_value(day_map_ious['lane_divider_iou'].item())] if do_drn_val_split
             else ["DAY", "-", "-", "-", "-", "-", "-", "-", "-"],
 
-            ["RAIN", format_value(rain_mean_map_iou), format_value(rain_map_ious['drivable_iou'].item()),
-             format_value(rain_map_ious['carpark_iou'].item()), format_value(rain_map_ious['ped_cross_iou'].item()),
-             format_value(rain_map_ious['walkway_iou'].item()), format_value(rain_map_ious['stop_line_iou'].item()),
-             format_value(rain_map_ious['road_divider_iou'].item()),
-             format_value(rain_map_ious['lane_divider_iou'].item())] if do_drn_val_split
-            else ["RAIN", "-", "-", "-", "-", "-", "-", "-", "-"],
+            # ["RAIN", format_value(rain_mean_map_iou), format_value(rain_map_ious['drivable_iou'].item()),
+            #  format_value(rain_map_ious['carpark_iou'].item()), format_value(rain_map_ious['ped_cross_iou'].item()),
+            #  format_value(rain_map_ious['walkway_iou'].item()), format_value(rain_map_ious['stop_line_iou'].item()),
+            #  format_value(rain_map_ious['road_divider_iou'].item()),
+            #  format_value(rain_map_ious['lane_divider_iou'].item())] if do_drn_val_split
+            # else ["RAIN", "-", "-", "-", "-", "-", "-", "-", "-"],
 
             ["NIGHT", format_value(night_mean_map_iou), format_value(night_map_ious['drivable_iou'].item()),
              format_value(night_map_ious['carpark_iou'].item()), format_value(night_map_ious['ped_cross_iou'].item()),
@@ -182,10 +183,10 @@ def display_final_results(train_task, dset, obj_metrics, day_metrics, rain_metri
             unions=day_map_metrics['map_masks_multi_ious_unions'],
             thresholds=day_map_metrics['map_seg_thresholds'])
 
-        rain_best_map_ious, rain_best_thresholds, rain_best_map_mean_iou = calculate_best_map_ious_and_thresholds(
-            intersections=rain_map_metrics['map_masks_multi_ious_intersections'],
-            unions=rain_map_metrics['map_masks_multi_ious_unions'],
-            thresholds=rain_map_metrics['map_seg_thresholds'])
+        # rain_best_map_ious, rain_best_thresholds, rain_best_map_mean_iou = calculate_best_map_ious_and_thresholds(
+        #     intersections=rain_map_metrics['map_masks_multi_ious_intersections'],
+        #     unions=rain_map_metrics['map_masks_multi_ious_unions'],
+        #     thresholds=rain_map_metrics['map_seg_thresholds'])
 
         night_best_map_ious, night_best_thresholds, night_best_map_mean_iou = calculate_best_map_ious_and_thresholds(
             intersections=night_map_metrics['map_masks_multi_ious_intersections'],
@@ -196,8 +197,8 @@ def display_final_results(train_task, dset, obj_metrics, day_metrics, rain_metri
             ["ALL", format_value(best_map_mean_iou*100), *[f"{x * 100:.3f}" for x in best_map_ious]],
             ["DAY", format_value(day_best_map_mean_iou*100), *[f"{x * 100:.3f}" for x in day_best_map_ious]]
             if do_drn_val_split else ["DAY", "-", "-", "-", "-", "-", "-", "-"],
-            ["RAIN", format_value(rain_best_map_mean_iou*100), *[f"{x * 100:.3f}" for x in rain_best_map_ious]]
-            if do_drn_val_split else ["RAIN", "-", "-", "-", "-", "-", "-", "-"],
+            # ["RAIN", format_value(rain_best_map_mean_iou*100), *[f"{x * 100:.3f}" for x in rain_best_map_ious]]
+            # if do_drn_val_split else ["RAIN", "-", "-", "-", "-", "-", "-", "-"],
             ["NIGHT", format_value(night_best_map_mean_iou*100), *[f"{x * 100:.3f}" for x in night_best_map_ious]]
             if do_drn_val_split else ["NIGHT", "-", "-", "-", "-", "-", "-", "-"]
         ]
@@ -212,8 +213,8 @@ def display_final_results(train_task, dset, obj_metrics, day_metrics, rain_metri
             ["ALL", *(torch.round(best_thresholds*100))],
             ["DAY", *(torch.round(day_best_thresholds*100))] if do_drn_val_split
             else ["DAY", "-", "-", "-", "-", "-", "-", "-"],
-            ["RAIN", *(torch.round(rain_best_thresholds*100))] if do_drn_val_split
-            else ["RAIN", "-", "-", "-", "-", "-", "-", "-"],
+            # ["RAIN", *(torch.round(rain_best_thresholds*100))] if do_drn_val_split
+            # else ["RAIN", "-", "-", "-", "-", "-", "-", "-"],
             ["NIGHT", *(torch.round(night_best_thresholds*100))] if do_drn_val_split
             else ["NIGHT", "-", "-", "-", "-", "-", "-", "-"]
         ]
@@ -300,7 +301,7 @@ class SigmoidFocalLoss(torch.nn.Module):
 
         Returns:
                 torch.Tensor: The computed loss.
-        """ 
+        """
         # get predictions between 0 and 1
         p = torch.sigmoid(map_seg_e)
         # BCE with logits
@@ -627,12 +628,12 @@ def main(
         # val
         log_freq=100,
         shuffle=False,
-        dset='trainval',  # we will just use val -- start with mini??
+        dset='mini',  # we will just use val -- start with mini??
         batch_size=8,
         nworkers=12,
         # data/log/load directories
-        data_dir='./datasets/nuscenes-trainval/', # do these params even matter lol
-        custom_dataroot='',
+        data_dir='./datasets/nuscenes/',
+        custom_dataroot='./datasets/nuscenes/scaled_images',
         log_dir='logs_eval_nuscenes_bevcar',
         init_dir='checkpoints/bev_car',
         ignore_load=None,
@@ -650,7 +651,7 @@ def main(
         use_radar_filters=False,
         use_metaradar=False,
         use_shallow_metadata=False,
-        use_pre_scaled_imgs=False,
+        use_pre_scaled_imgs=True,
         use_obj_layer_only_on_map=False,
         init_query_with_image_feats=False,
         do_rgbcompress=True,

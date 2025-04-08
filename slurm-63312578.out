@@ -1,0 +1,219 @@
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/attention.py:26: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/swiglu_ffn.py:44: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/dataloader.py:560: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+cuda:0
+model_name 50000_CAM_ONLY
+resolution: [448, 896]
+loading nuscenes...
+version =  mini
+======
+Loading NuScenes tables for version v1.0-mini...
+23 category,
+8 attribute,
+4 visibility,
+911 instance,
+12 sensor,
+120 calibrated_sensor,
+31206 ego_pose,
+8 log,
+10 scene,
+404 sample,
+31206 sample_data,
+18538 sample_annotation,
+4 map,
+Done loading in 0.468 seconds.
+======
+Reverse indexing ...
+Done reverse indexing in 0.1 seconds.
+======
+loading Maps...
+map_folder  ./datasets/nuscenes
+indices (323, 1)
+NuscData: 323 samples. Split: train.
+                   Augmentation Conf: {'final_dim': [448, 896], 'cams': ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK', 'CAM_BACK_RIGHT'], 'ncams': 6}
+indices (162, 1)
+NuscData: 162 samples. Split: val.
+                   Augmentation Conf: {'final_dim': [448, 896], 'cams': ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK', 'CAM_BACK_RIGHT'], 'ncams': 6}
+data ready
+Trainable parameters: 37313074
+Non-trainable parameters: 86579712
+Total parameters (trainable + fixed) 123892786
+reading ckpt from model_checkpoints/CAM_ONLY
+...found checkpoint model_checkpoints/CAM_ONLY/model-000050000.pth
+50000_CAM_ONLY; step 000001/162; eval_status: DAY; rtime 0.00; itime 13.44 (13438.46 ms); loss 0.00014; iou_ev 52.3; m_map_iou 61.5; driv 93.1; carp 35.5; ped_cr 59.9; walkw 78.0; stop 21.0; road 72.2; lane 70.6
+50000_CAM_ONLY; step 000002/162; eval_status: DAY; rtime 0.01; itime 0.44 (6937.46 ms); loss 0.00013; iou_ev 46.8; m_map_iou 65.6; driv 93.1; carp 37.7; ped_cr 64.6; walkw 80.0; stop 35.0; road 79.2; lane 69.4
+50000_CAM_ONLY; step 000003/162; eval_status: DAY; rtime 0.02; itime 0.48 (4785.70 ms); loss 0.00011; iou_ev 49.9; m_map_iou 68.9; driv 93.9; carp 48.8; ped_cr 69.8; walkw 82.6; stop 37.9; road 77.7; lane 71.5
+50000_CAM_ONLY; step 000004/162; eval_status: DAY; rtime 0.01; itime 0.54 (3723.52 ms); loss 0.00009; iou_ev 53.3; m_map_iou 69.8; driv 94.5; carp 54.3; ped_cr 69.8; walkw 83.1; stop 37.8; road 76.7; lane 72.2
+50000_CAM_ONLY; step 000005/162; eval_status: DAY; rtime 0.01; itime 0.60 (3099.09 ms); loss 0.00018; iou_ev 56.4; m_map_iou 68.1; driv 93.4; carp 58.1; ped_cr 66.5; walkw 81.6; stop 31.9; road 73.7; lane 71.7
+50000_CAM_ONLY; step 000006/162; eval_status: DAY; rtime 0.01; itime 0.52 (2669.94 ms); loss 0.00030; iou_ev 56.3; m_map_iou 66.5; driv 92.8; carp 56.0; ped_cr 68.5; walkw 81.3; stop 28.2; road 69.1; lane 69.4
+50000_CAM_ONLY; step 000007/162; eval_status: DAY; rtime 0.02; itime 0.55 (2367.02 ms); loss 0.00036; iou_ev 54.4; m_map_iou 64.2; driv 91.5; carp 49.6; ped_cr 69.7; walkw 79.5; stop 27.5; road 64.0; lane 67.8
+50000_CAM_ONLY; step 000008/162; eval_status: DAY; rtime 0.02; itime 0.53 (2137.47 ms); loss 0.00038; iou_ev 52.4; m_map_iou 62.9; driv 90.1; carp 45.5; ped_cr 71.2; walkw 77.9; stop 28.1; road 60.4; lane 66.8
+50000_CAM_ONLY; step 000009/162; eval_status: DAY; rtime 0.01; itime 0.48 (1953.44 ms); loss 0.00036; iou_ev 51.8; m_map_iou 62.1; driv 89.5; carp 44.7; ped_cr 71.9; walkw 76.5; stop 30.0; road 57.0; lane 65.2
+50000_CAM_ONLY; step 000010/162; eval_status: DAY; rtime 0.02; itime 0.53 (1810.64 ms); loss 0.00030; iou_ev 52.4; m_map_iou 61.9; driv 89.0; carp 45.6; ped_cr 72.0; walkw 75.8; stop 31.7; road 55.9; lane 63.6
+50000_CAM_ONLY; step 000011/162; eval_status: DAY; rtime 0.02; itime 0.54 (1695.21 ms); loss 0.00028; iou_ev 53.1; m_map_iou 62.0; driv 88.8; carp 46.6; ped_cr 71.8; walkw 75.4; stop 33.6; road 54.9; lane 63.0
+50000_CAM_ONLY; step 000012/162; eval_status: DAY; rtime 0.01; itime 0.52 (1597.41 ms); loss 0.00023; iou_ev 53.6; m_map_iou 62.4; driv 88.8; carp 48.5; ped_cr 72.4; walkw 75.3; stop 35.2; road 54.5; lane 62.1
+50000_CAM_ONLY; step 000013/162; eval_status: DAY; rtime 0.03; itime 0.57 (1518.68 ms); loss 0.00025; iou_ev 53.9; m_map_iou 62.6; driv 88.7; carp 50.4; ped_cr 72.2; walkw 75.2; stop 36.0; road 54.5; lane 61.3
+50000_CAM_ONLY; step 000014/162; eval_status: DAY; rtime 0.01; itime 0.54 (1448.73 ms); loss 0.00030; iou_ev 54.3; m_map_iou 62.9; driv 88.9; carp 52.3; ped_cr 72.2; walkw 75.0; stop 36.7; road 54.6; lane 60.5
+50000_CAM_ONLY; step 000015/162; eval_status: DAY; rtime 0.01; itime 0.53 (1387.21 ms); loss 0.00032; iou_ev 54.1; m_map_iou 63.2; driv 89.0; carp 54.1; ped_cr 71.8; walkw 74.8; stop 37.7; road 55.1; lane 59.8
+50000_CAM_ONLY; step 000016/162; eval_status: DAY; rtime 0.01; itime 0.56 (1335.36 ms); loss 0.00028; iou_ev 54.3; m_map_iou 63.4; driv 89.2; carp 55.8; ped_cr 71.4; walkw 74.8; stop 38.6; road 55.3; lane 59.0
+50000_CAM_ONLY; step 000017/162; eval_status: DAY; rtime 0.02; itime 0.53 (1288.19 ms); loss 0.00026; iou_ev 54.4; m_map_iou 63.8; driv 89.4; carp 57.2; ped_cr 71.6; walkw 74.8; stop 39.4; road 55.6; lane 58.4
+50000_CAM_ONLY; step 000018/162; eval_status: DAY; rtime 0.02; itime 0.54 (1246.81 ms); loss 0.00030; iou_ev 54.5; m_map_iou 64.0; driv 89.6; carp 57.9; ped_cr 71.7; walkw 74.8; stop 39.8; road 55.9; lane 58.1
+50000_CAM_ONLY; step 000019/162; eval_status: DAY; rtime 0.01; itime 0.50 (1207.33 ms); loss 0.00035; iou_ev 54.9; m_map_iou 64.1; driv 89.6; carp 58.4; ped_cr 72.0; walkw 74.7; stop 40.0; road 56.3; lane 57.5
+50000_CAM_ONLY; step 000020/162; eval_status: DAY; rtime 0.02; itime 0.51 (1172.51 ms); loss 0.00028; iou_ev 55.2; m_map_iou 64.2; driv 89.7; carp 59.4; ped_cr 72.3; walkw 74.7; stop 40.1; road 55.9; lane 57.2
+50000_CAM_ONLY; step 000021/162; eval_status: DAY; rtime 0.01; itime 0.54 (1142.56 ms); loss 0.00037; iou_ev 55.1; m_map_iou 64.5; driv 89.8; carp 60.5; ped_cr 72.9; walkw 74.9; stop 40.4; road 56.2; lane 57.1
+50000_CAM_ONLY; step 000022/162; eval_status: DAY; rtime 0.02; itime 0.52 (1114.10 ms); loss 0.00038; iou_ev 55.3; m_map_iou 64.8; driv 89.9; carp 61.5; ped_cr 73.2; walkw 74.9; stop 40.7; road 56.5; lane 56.9
+50000_CAM_ONLY; step 000023/162; eval_status: DAY; rtime 0.02; itime 0.52 (1088.23 ms); loss 0.00039; iou_ev 55.8; m_map_iou 65.0; driv 90.0; carp 62.2; ped_cr 73.5; walkw 75.1; stop 40.7; road 57.0; lane 56.7
+50000_CAM_ONLY; step 000024/162; eval_status: DAY; rtime 0.02; itime 0.55 (1065.62 ms); loss 0.00038; iou_ev 56.1; m_map_iou 65.3; driv 90.0; carp 63.0; ped_cr 73.8; walkw 75.3; stop 40.9; road 57.5; lane 56.5
+50000_CAM_ONLY; step 000025/162; eval_status: DAY; rtime 0.01; itime 0.52 (1043.61 ms); loss 0.00033; iou_ev 56.3; m_map_iou 65.5; driv 90.0; carp 63.9; ped_cr 73.9; walkw 75.4; stop 41.0; road 57.9; lane 56.2
+50000_CAM_ONLY; step 000026/162; eval_status: DAY; rtime 0.01; itime 0.53 (1023.92 ms); loss 0.00031; iou_ev 56.9; m_map_iou 65.6; driv 90.1; carp 64.4; ped_cr 74.0; walkw 75.6; stop 40.9; road 58.1; lane 56.3
+50000_CAM_ONLY; step 000027/162; eval_status: DAY; rtime 0.01; itime 0.49 (1004.11 ms); loss 0.00041; iou_ev 57.0; m_map_iou 65.8; driv 90.3; carp 64.9; ped_cr 73.9; walkw 75.8; stop 40.7; road 58.7; lane 56.4
+50000_CAM_ONLY; step 000028/162; eval_status: DAY; rtime 0.01; itime 0.55 (987.74 ms); loss 0.00039; iou_ev 57.1; m_map_iou 66.0; driv 90.4; carp 65.5; ped_cr 73.9; walkw 75.9; stop 40.3; road 59.2; lane 56.7
+50000_CAM_ONLY; step 000029/162; eval_status: DAY; rtime 0.03; itime 0.57 (973.20 ms); loss 0.00043; iou_ev 56.6; m_map_iou 66.1; driv 90.5; carp 66.1; ped_cr 73.4; walkw 75.9; stop 40.0; road 59.5; lane 56.9
+50000_CAM_ONLY; step 000030/162; eval_status: DAY; rtime 0.02; itime 0.56 (959.44 ms); loss 0.00042; iou_ev 56.7; m_map_iou 66.2; driv 90.6; carp 66.7; ped_cr 73.1; walkw 76.0; stop 39.8; road 59.7; lane 57.2
+50000_CAM_ONLY; step 000031/162; eval_status: DAY; rtime 0.01; itime 0.51 (944.91 ms); loss 0.00051; iou_ev 56.9; m_map_iou 66.2; driv 90.7; carp 67.0; ped_cr 73.1; walkw 76.1; stop 39.8; road 59.7; lane 57.2
+50000_CAM_ONLY; step 000032/162; eval_status: DAY; rtime 0.02; itime 0.51 (931.44 ms); loss 0.00048; iou_ev 57.2; m_map_iou 66.4; driv 90.8; carp 67.5; ped_cr 73.2; walkw 76.1; stop 39.9; road 60.2; lane 57.4
+50000_CAM_ONLY; step 000033/162; eval_status: DAY; rtime 0.04; itime 0.59 (921.01 ms); loss 0.00034; iou_ev 57.5; m_map_iou 66.5; driv 90.8; carp 67.8; ped_cr 73.1; walkw 76.1; stop 39.8; road 60.4; lane 57.6
+50000_CAM_ONLY; step 000034/162; eval_status: DAY; rtime 0.01; itime 0.49 (908.42 ms); loss 0.00034; iou_ev 57.5; m_map_iou 66.5; driv 90.9; carp 67.8; ped_cr 73.2; walkw 76.1; stop 39.5; road 60.1; lane 57.8
+50000_CAM_ONLY; step 000035/162; eval_status: DAY; rtime 0.03; itime 0.57 (898.62 ms); loss 0.00038; iou_ev 57.5; m_map_iou 66.5; driv 90.9; carp 68.2; ped_cr 72.7; walkw 76.2; stop 39.4; road 60.3; lane 57.8
+50000_CAM_ONLY; step 000036/162; eval_status: DAY; rtime 0.02; itime 0.56 (889.23 ms); loss 0.00033; iou_ev 57.7; m_map_iou 66.4; driv 91.0; carp 68.5; ped_cr 72.0; walkw 76.2; stop 38.8; road 60.4; lane 57.8
+50000_CAM_ONLY; step 000037/162; eval_status: DAY; rtime 0.02; itime 0.55 (880.09 ms); loss 0.00054; iou_ev 57.6; m_map_iou 66.1; driv 90.9; carp 68.8; ped_cr 71.1; walkw 76.0; stop 38.2; road 60.4; lane 57.6
+50000_CAM_ONLY; step 000038/162; eval_status: DAY; rtime 0.03; itime 0.56 (871.65 ms); loss 0.00044; iou_ev 57.4; m_map_iou 65.8; driv 90.8; carp 68.7; ped_cr 70.3; walkw 75.9; stop 37.9; road 59.8; lane 57.2
+50000_CAM_ONLY; step 000039/162; eval_status: DAY; rtime 0.04; itime 0.58 (864.19 ms); loss 0.00047; iou_ev 57.3; m_map_iou 65.6; driv 90.7; carp 68.6; ped_cr 69.7; walkw 75.8; stop 37.5; road 59.8; lane 56.9
+50000_CAM_ONLY; step 000040/162; eval_status: DAY; rtime 0.01; itime 0.49 (854.74 ms); loss 0.00049; iou_ev 57.2; m_map_iou 65.3; driv 90.6; carp 68.7; ped_cr 68.8; walkw 75.7; stop 37.1; road 59.9; lane 56.5
+50000_CAM_ONLY; step 000041/162; eval_status: DAY; rtime 0.01; itime 0.50 (846.02 ms); loss 0.00087; iou_ev 56.9; m_map_iou 65.8; driv 90.6; carp 68.7; ped_cr 69.2; walkw 75.8; stop 40.2; road 59.9; lane 56.4
+50000_CAM_ONLY; step 000042/162; eval_status: DAY; rtime 0.01; itime 0.55 (839.05 ms); loss 0.00091; iou_ev 56.7; m_map_iou 66.1; driv 90.6; carp 68.8; ped_cr 69.2; walkw 75.8; stop 42.6; road 59.9; lane 56.1
+50000_CAM_ONLY; step 000043/162; eval_status: DAY; rtime 0.02; itime 0.52 (831.55 ms); loss 0.00087; iou_ev 56.4; m_map_iou 66.5; driv 90.6; carp 68.8; ped_cr 69.4; walkw 75.9; stop 44.8; road 59.9; lane 56.0
+50000_CAM_ONLY; step 000044/162; eval_status: DAY; rtime 0.02; itime 0.52 (824.57 ms); loss 0.00075; iou_ev 56.2; m_map_iou 66.8; driv 90.6; carp 68.8; ped_cr 69.5; walkw 76.0; stop 46.5; road 59.9; lane 56.0
+50000_CAM_ONLY; step 000045/162; eval_status: DAY; rtime 0.02; itime 0.59 (819.39 ms); loss 0.00085; iou_ev 55.9; m_map_iou 67.0; driv 90.7; carp 68.8; ped_cr 69.8; walkw 76.0; stop 48.2; road 59.9; lane 55.8
+50000_CAM_ONLY; step 000046/162; eval_status: DAY; rtime 0.03; itime 0.52 (812.93 ms); loss 0.00075; iou_ev 55.7; m_map_iou 67.2; driv 90.7; carp 68.7; ped_cr 70.0; walkw 76.0; stop 49.5; road 59.9; lane 55.5
+50000_CAM_ONLY; step 000047/162; eval_status: DAY; rtime 0.02; itime 0.52 (806.78 ms); loss 0.00064; iou_ev 55.5; m_map_iou 67.3; driv 90.7; carp 68.7; ped_cr 69.9; walkw 76.0; stop 50.5; road 59.9; lane 55.3
+50000_CAM_ONLY; step 000048/162; eval_status: DAY; rtime 0.01; itime 0.53 (801.09 ms); loss 0.00055; iou_ev 55.5; m_map_iou 67.4; driv 90.7; carp 68.6; ped_cr 69.9; walkw 76.1; stop 51.5; road 59.9; lane 55.0
+50000_CAM_ONLY; step 000049/162; eval_status: DAY; rtime 0.02; itime 0.58 (796.48 ms); loss 0.00075; iou_ev 55.4; m_map_iou 67.5; driv 90.6; carp 68.5; ped_cr 70.1; walkw 76.1; stop 52.4; road 59.9; lane 54.8
+50000_CAM_ONLY; step 000050/162; eval_status: DAY; rtime 0.02; itime 0.53 (791.07 ms); loss 0.00065; iou_ev 55.4; m_map_iou 67.6; driv 90.6; carp 68.4; ped_cr 70.3; walkw 76.1; stop 53.3; road 59.9; lane 54.6
+50000_CAM_ONLY; step 000051/162; eval_status: DAY; rtime 0.01; itime 0.49 (785.25 ms); loss 0.00099; iou_ev 55.0; m_map_iou 67.7; driv 90.6; carp 68.4; ped_cr 70.6; walkw 76.1; stop 54.0; road 59.9; lane 54.4
+50000_CAM_ONLY; step 000052/162; eval_status: DAY; rtime 0.02; itime 0.55 (780.74 ms); loss 0.00091; iou_ev 54.8; m_map_iou 67.8; driv 90.7; carp 68.4; ped_cr 70.9; walkw 76.2; stop 54.5; road 59.9; lane 54.4
+50000_CAM_ONLY; step 000053/162; eval_status: DAY; rtime 0.03; itime 0.54 (776.15 ms); loss 0.00079; iou_ev 54.7; m_map_iou 67.9; driv 90.7; carp 68.4; ped_cr 70.9; walkw 76.2; stop 55.0; road 59.9; lane 54.1
+50000_CAM_ONLY; step 000054/162; eval_status: DAY; rtime 0.02; itime 0.51 (771.16 ms); loss 0.00110; iou_ev 54.2; m_map_iou 68.0; driv 90.7; carp 68.4; ped_cr 71.1; walkw 76.3; stop 55.5; road 59.9; lane 54.2
+50000_CAM_ONLY; step 000055/162; eval_status: DAY; rtime 0.01; itime 0.53 (766.79 ms); loss 0.00088; iou_ev 53.8; m_map_iou 68.2; driv 90.7; carp 68.4; ped_cr 71.4; walkw 76.4; stop 56.1; road 59.9; lane 54.2
+50000_CAM_ONLY; step 000056/162; eval_status: DAY; rtime 0.01; itime 0.48 (761.68 ms); loss 0.00070; iou_ev 53.6; m_map_iou 68.3; driv 90.7; carp 68.4; ped_cr 71.5; walkw 76.4; stop 56.6; road 59.9; lane 54.2
+50000_CAM_ONLY; step 000057/162; eval_status: DAY; rtime 0.02; itime 0.52 (757.50 ms); loss 0.00074; iou_ev 53.4; m_map_iou 68.3; driv 90.7; carp 68.4; ped_cr 71.8; walkw 76.4; stop 57.2; road 59.9; lane 53.9
+50000_CAM_ONLY; step 000058/162; eval_status: DAY; rtime 0.01; itime 0.59 (754.64 ms); loss 0.00080; iou_ev 53.3; m_map_iou 68.4; driv 90.7; carp 68.5; ped_cr 71.9; walkw 76.4; stop 57.6; road 59.9; lane 53.6
+50000_CAM_ONLY; step 000059/162; eval_status: DAY; rtime 0.02; itime 0.49 (750.16 ms); loss 0.00059; iou_ev 53.4; m_map_iou 68.4; driv 90.7; carp 68.5; ped_cr 71.9; walkw 76.4; stop 58.0; road 59.9; lane 53.5
+50000_CAM_ONLY; step 000060/162; eval_status: DAY; rtime 0.04; itime 0.53 (746.45 ms); loss 0.00062; iou_ev 53.5; m_map_iou 68.5; driv 90.7; carp 68.5; ped_cr 71.9; walkw 76.5; stop 58.3; road 59.9; lane 53.5
+50000_CAM_ONLY; step 000061/162; eval_status: DAY; rtime 0.01; itime 0.53 (742.97 ms); loss 0.00068; iou_ev 53.5; m_map_iou 68.5; driv 90.7; carp 68.5; ped_cr 72.0; walkw 76.5; stop 58.7; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000062/162; eval_status: DAY; rtime 0.02; itime 0.51 (739.23 ms); loss 0.00070; iou_ev 53.4; m_map_iou 68.6; driv 90.7; carp 68.5; ped_cr 72.1; walkw 76.5; stop 59.1; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000063/162; eval_status: DAY; rtime 0.02; itime 0.54 (736.04 ms); loss 0.00076; iou_ev 53.3; m_map_iou 68.7; driv 90.7; carp 68.5; ped_cr 72.1; walkw 76.6; stop 59.5; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000064/162; eval_status: DAY; rtime 0.01; itime 0.51 (732.57 ms); loss 0.00073; iou_ev 53.3; m_map_iou 68.7; driv 90.7; carp 68.5; ped_cr 72.2; walkw 76.6; stop 59.9; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000065/162; eval_status: DAY; rtime 0.02; itime 0.53 (729.41 ms); loss 0.00066; iou_ev 53.3; m_map_iou 68.8; driv 90.7; carp 68.5; ped_cr 72.4; walkw 76.6; stop 60.3; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000066/162; eval_status: DAY; rtime 0.02; itime 0.54 (726.51 ms); loss 0.00061; iou_ev 53.2; m_map_iou 68.9; driv 90.7; carp 68.5; ped_cr 72.4; walkw 76.6; stop 60.5; road 59.9; lane 53.3
+50000_CAM_ONLY; step 000067/162; eval_status: DAY; rtime 0.02; itime 0.56 (724.07 ms); loss 0.00054; iou_ev 53.2; m_map_iou 69.0; driv 90.8; carp 68.6; ped_cr 72.6; walkw 76.6; stop 60.9; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000068/162; eval_status: DAY; rtime 0.01; itime 0.49 (720.64 ms); loss 0.00053; iou_ev 53.3; m_map_iou 69.0; driv 90.8; carp 68.6; ped_cr 72.6; walkw 76.6; stop 61.2; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000069/162; eval_status: DAY; rtime 0.01; itime 0.48 (717.18 ms); loss 0.00055; iou_ev 53.3; m_map_iou 69.0; driv 90.8; carp 68.6; ped_cr 72.7; walkw 76.6; stop 61.4; road 59.9; lane 53.3
+50000_CAM_ONLY; step 000070/162; eval_status: DAY; rtime 0.03; itime 0.53 (714.44 ms); loss 0.00052; iou_ev 53.3; m_map_iou 69.1; driv 90.8; carp 68.6; ped_cr 72.7; walkw 76.6; stop 61.7; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000071/162; eval_status: DAY; rtime 0.02; itime 0.62 (713.04 ms); loss 0.00050; iou_ev 53.4; m_map_iou 69.1; driv 90.8; carp 68.6; ped_cr 72.8; walkw 76.6; stop 62.0; road 59.9; lane 53.4
+50000_CAM_ONLY; step 000072/162; eval_status: DAY; rtime 0.01; itime 0.47 (709.65 ms); loss 0.00052; iou_ev 53.5; m_map_iou 69.2; driv 90.8; carp 68.5; ped_cr 72.8; walkw 76.6; stop 62.2; road 59.9; lane 53.3
+50000_CAM_ONLY; step 000073/162; eval_status: DAY; rtime 0.01; itime 0.49 (706.60 ms); loss 0.00052; iou_ev 53.6; m_map_iou 69.2; driv 90.8; carp 68.6; ped_cr 72.8; walkw 76.6; stop 62.4; road 59.9; lane 53.3
+50000_CAM_ONLY; step 000074/162; eval_status: DAY; rtime 0.02; itime 0.54 (704.39 ms); loss 0.00043; iou_ev 53.6; m_map_iou 69.2; driv 90.8; carp 68.6; ped_cr 72.8; walkw 76.6; stop 62.6; road 59.9; lane 53.3
+50000_CAM_ONLY; step 000075/162; eval_status: DAY; rtime 0.02; itime 0.50 (701.67 ms); loss 0.00055; iou_ev 53.7; m_map_iou 69.3; driv 90.8; carp 68.6; ped_cr 72.9; walkw 76.7; stop 62.9; road 59.9; lane 53.2
+50000_CAM_ONLY; step 000076/162; eval_status: DAY; rtime 0.02; itime 0.54 (699.53 ms); loss 0.00059; iou_ev 53.7; m_map_iou 69.3; driv 90.8; carp 68.6; ped_cr 72.9; walkw 76.7; stop 63.1; road 59.9; lane 53.1
+50000_CAM_ONLY; step 000077/162; eval_status: DAY; rtime 0.02; itime 0.53 (697.33 ms); loss 0.00060; iou_ev 53.6; m_map_iou 69.3; driv 90.7; carp 68.6; ped_cr 72.9; walkw 76.7; stop 63.3; road 59.9; lane 53.1
+50000_CAM_ONLY; step 000078/162; eval_status: DAY; rtime 0.02; itime 0.50 (694.83 ms); loss 0.00060; iou_ev 53.6; m_map_iou 69.3; driv 90.7; carp 68.6; ped_cr 72.9; walkw 76.6; stop 63.5; road 59.9; lane 53.0
+50000_CAM_ONLY; step 000079/162; eval_status: DAY; rtime 0.02; itime 0.55 (693.05 ms); loss 0.00047; iou_ev 53.6; m_map_iou 69.4; driv 90.7; carp 68.6; ped_cr 73.0; walkw 76.7; stop 63.7; road 59.9; lane 53.0
+50000_CAM_ONLY; step 000080/162; eval_status: DAY; rtime 0.02; itime 0.51 (690.75 ms); loss 0.00046; iou_ev 53.7; m_map_iou 69.4; driv 90.7; carp 68.6; ped_cr 73.0; walkw 76.7; stop 63.9; road 59.9; lane 53.0
+50000_CAM_ONLY; step 000081/162; eval_status: DAY; rtime 0.01; itime 0.47 (688.02 ms); loss 0.00051; iou_ev 53.7; m_map_iou 69.4; driv 90.7; carp 68.7; ped_cr 73.0; walkw 76.7; stop 64.0; road 59.9; lane 52.9
+50000_CAM_ONLY; step 000082/162; eval_status: DAY; rtime 0.02; itime 0.55 (686.33 ms); loss 0.00108; iou_ev 53.6; m_map_iou 69.2; driv 90.6; carp 68.7; ped_cr 72.6; walkw 76.3; stop 63.7; road 59.6; lane 52.7
+50000_CAM_ONLY; step 000083/162; eval_status: DAY; rtime 0.01; itime 0.49 (683.94 ms); loss 0.00066; iou_ev 53.6; m_map_iou 69.0; driv 90.5; carp 68.7; ped_cr 72.3; walkw 75.9; stop 63.4; road 59.4; lane 52.6
+50000_CAM_ONLY; step 000084/162; eval_status: DAY; rtime 0.01; itime 0.52 (681.93 ms); loss 0.00070; iou_ev 53.5; m_map_iou 68.8; driv 90.4; carp 68.7; ped_cr 72.0; walkw 75.5; stop 63.1; road 59.3; lane 52.4
+50000_CAM_ONLY; step 000085/162; eval_status: DAY; rtime 0.02; itime 0.50 (679.75 ms); loss 0.00054; iou_ev 53.5; m_map_iou 68.6; driv 90.3; carp 68.7; ped_cr 71.7; walkw 75.2; stop 62.6; road 59.1; lane 52.3
+50000_CAM_ONLY; step 000086/162; eval_status: DAY; rtime 0.02; itime 0.53 (677.96 ms); loss 0.00069; iou_ev 53.4; m_map_iou 68.4; driv 90.2; carp 68.7; ped_cr 71.7; walkw 74.9; stop 62.3; road 58.9; lane 52.2
+50000_CAM_ONLY; step 000087/162; eval_status: DAY; rtime 0.01; itime 0.52 (676.20 ms); loss 0.00076; iou_ev 53.2; m_map_iou 68.2; driv 90.2; carp 68.7; ped_cr 71.7; walkw 74.6; stop 61.8; road 58.7; lane 52.1
+50000_CAM_ONLY; step 000088/162; eval_status: DAY; rtime 0.02; itime 0.52 (674.37 ms); loss 0.00101; iou_ev 53.0; m_map_iou 68.1; driv 90.1; carp 68.7; ped_cr 71.7; walkw 74.3; stop 61.5; road 58.4; lane 52.0
+50000_CAM_ONLY; step 000089/162; eval_status: DAY; rtime 0.01; itime 0.48 (672.18 ms); loss 0.00056; iou_ev 53.0; m_map_iou 67.9; driv 89.9; carp 68.7; ped_cr 71.7; walkw 74.0; stop 61.3; road 58.0; lane 51.8
+50000_CAM_ONLY; step 000090/162; eval_status: DAY; rtime 0.01; itime 0.52 (670.47 ms); loss 0.00055; iou_ev 52.9; m_map_iou 67.7; driv 89.8; carp 68.7; ped_cr 71.7; walkw 73.7; stop 61.0; road 57.6; lane 51.6
+50000_CAM_ONLY; step 000091/162; eval_status: DAY; rtime 0.02; itime 0.55 (669.20 ms); loss 0.00063; iou_ev 52.9; m_map_iou 67.6; driv 89.7; carp 68.7; ped_cr 71.6; walkw 73.4; stop 60.9; road 57.3; lane 51.4
+50000_CAM_ONLY; step 000092/162; eval_status: DAY; rtime 0.02; itime 0.49 (667.26 ms); loss 0.00055; iou_ev 52.9; m_map_iou 67.4; driv 89.5; carp 68.7; ped_cr 71.6; walkw 73.2; stop 60.6; road 56.9; lane 51.3
+50000_CAM_ONLY; step 000093/162; eval_status: DAY; rtime 0.02; itime 0.52 (665.64 ms); loss 0.00046; iou_ev 52.9; m_map_iou 67.2; driv 89.4; carp 68.7; ped_cr 71.5; walkw 72.9; stop 60.4; road 56.5; lane 51.1
+50000_CAM_ONLY; step 000094/162; eval_status: DAY; rtime 0.01; itime 0.54 (664.31 ms); loss 0.00042; iou_ev 52.9; m_map_iou 67.0; driv 89.2; carp 68.7; ped_cr 71.4; walkw 72.7; stop 60.2; road 56.0; lane 51.0
+50000_CAM_ONLY; step 000095/162; eval_status: DAY; rtime 0.02; itime 0.49 (662.51 ms); loss 0.00023; iou_ev 52.9; m_map_iou 66.9; driv 89.2; carp 68.7; ped_cr 71.3; walkw 72.5; stop 60.0; road 55.6; lane 51.0
+50000_CAM_ONLY; step 000096/162; eval_status: DAY; rtime 0.02; itime 0.50 (660.83 ms); loss 0.00020; iou_ev 53.0; m_map_iou 66.8; driv 89.1; carp 68.7; ped_cr 71.3; walkw 72.3; stop 59.8; road 55.4; lane 51.0
+50000_CAM_ONLY; step 000097/162; eval_status: DAY; rtime 0.04; itime 0.52 (659.41 ms); loss 0.00027; iou_ev 53.0; m_map_iou 66.7; driv 89.1; carp 68.7; ped_cr 71.2; walkw 72.2; stop 59.7; road 55.4; lane 51.0
+50000_CAM_ONLY; step 000098/162; eval_status: DAY; rtime 0.05; itime 0.54 (658.21 ms); loss 0.00027; iou_ev 53.0; m_map_iou 66.7; driv 89.1; carp 68.7; ped_cr 71.2; walkw 72.0; stop 59.5; road 55.3; lane 51.0
+50000_CAM_ONLY; step 000099/162; eval_status: DAY; rtime 0.01; itime 0.48 (656.44 ms); loss 0.00027; iou_ev 53.0; m_map_iou 66.6; driv 89.0; carp 68.7; ped_cr 71.2; walkw 71.9; stop 59.3; road 55.2; lane 50.9
+50000_CAM_ONLY; step 000100/162; eval_status: DAY; rtime 0.03; itime 0.55 (655.38 ms); loss 0.00027; iou_ev 52.9; m_map_iou 66.5; driv 89.0; carp 68.7; ped_cr 71.1; walkw 71.7; stop 59.2; road 55.1; lane 51.0
+50000_CAM_ONLY; step 000101/162; eval_status: DAY; rtime 0.02; itime 0.52 (654.04 ms); loss 0.00044; iou_ev 52.9; m_map_iou 66.4; driv 88.9; carp 68.7; ped_cr 71.0; walkw 71.5; stop 59.0; road 54.7; lane 50.9
+50000_CAM_ONLY; step 000102/162; eval_status: DAY; rtime 0.02; itime 0.49 (652.46 ms); loss 0.00037; iou_ev 52.9; m_map_iou 66.2; driv 88.8; carp 68.7; ped_cr 70.7; walkw 71.4; stop 58.8; road 54.2; lane 50.8
+50000_CAM_ONLY; step 000103/162; eval_status: DAY; rtime 0.02; itime 0.52 (651.17 ms); loss 0.00068; iou_ev 53.0; m_map_iou 66.0; driv 88.7; carp 68.7; ped_cr 70.4; walkw 71.2; stop 58.7; road 53.7; lane 50.7
+50000_CAM_ONLY; step 000104/162; eval_status: DAY; rtime 0.04; itime 0.52 (649.89 ms); loss 0.00072; iou_ev 53.0; m_map_iou 65.9; driv 88.6; carp 68.7; ped_cr 70.2; walkw 71.0; stop 58.6; road 53.3; lane 50.7
+50000_CAM_ONLY; step 000105/162; eval_status: DAY; rtime 0.02; itime 0.51 (648.52 ms); loss 0.00066; iou_ev 53.0; m_map_iou 65.7; driv 88.5; carp 68.7; ped_cr 70.0; walkw 70.8; stop 58.5; road 52.8; lane 50.6
+50000_CAM_ONLY; step 000106/162; eval_status: DAY; rtime 0.03; itime 0.54 (647.52 ms); loss 0.00080; iou_ev 52.9; m_map_iou 65.6; driv 88.5; carp 68.7; ped_cr 69.7; walkw 70.6; stop 58.3; road 52.5; lane 50.7
+50000_CAM_ONLY; step 000107/162; eval_status: DAY; rtime 0.01; itime 0.50 (646.18 ms); loss 0.00040; iou_ev 53.0; m_map_iou 65.4; driv 88.5; carp 68.7; ped_cr 69.6; walkw 70.4; stop 58.0; road 52.3; lane 50.6
+50000_CAM_ONLY; step 000108/162; eval_status: DAY; rtime 0.02; itime 0.48 (644.63 ms); loss 0.00022; iou_ev 53.1; m_map_iou 65.4; driv 88.5; carp 68.7; ped_cr 69.4; walkw 70.2; stop 57.9; road 52.3; lane 50.6
+50000_CAM_ONLY; step 000109/162; eval_status: DAY; rtime 0.02; itime 0.55 (643.76 ms); loss 0.00021; iou_ev 53.2; m_map_iou 65.3; driv 88.5; carp 68.7; ped_cr 69.4; walkw 70.0; stop 57.6; road 52.1; lane 50.6
+50000_CAM_ONLY; step 000110/162; eval_status: DAY; rtime 0.01; itime 0.54 (642.85 ms); loss 0.00043; iou_ev 53.1; m_map_iou 65.2; driv 88.5; carp 68.7; ped_cr 69.3; walkw 69.9; stop 57.4; road 52.0; lane 50.7
+50000_CAM_ONLY; step 000111/162; eval_status: DAY; rtime 0.02; itime 0.49 (641.48 ms); loss 0.00038; iou_ev 53.1; m_map_iou 65.1; driv 88.5; carp 68.7; ped_cr 69.3; walkw 69.8; stop 57.2; road 51.7; lane 50.6
+50000_CAM_ONLY; step 000112/162; eval_status: DAY; rtime 0.01; itime 0.51 (640.27 ms); loss 0.00036; iou_ev 53.0; m_map_iou 65.0; driv 88.6; carp 68.7; ped_cr 69.3; walkw 69.7; stop 56.9; road 51.4; lane 50.7
+50000_CAM_ONLY; step 000113/162; eval_status: DAY; rtime 0.02; itime 0.57 (639.63 ms); loss 0.00056; iou_ev 53.0; m_map_iou 64.9; driv 88.5; carp 68.7; ped_cr 69.2; walkw 69.6; stop 56.6; road 51.1; lane 50.7
+50000_CAM_ONLY; step 000114/162; eval_status: DAY; rtime 0.02; itime 0.51 (638.49 ms); loss 0.00052; iou_ev 53.0; m_map_iou 64.8; driv 88.4; carp 68.7; ped_cr 69.1; walkw 69.5; stop 56.3; road 50.8; lane 50.7
+50000_CAM_ONLY; step 000115/162; eval_status: DAY; rtime 0.02; itime 0.48 (637.10 ms); loss 0.00048; iou_ev 53.0; m_map_iou 64.6; driv 88.4; carp 68.7; ped_cr 68.7; walkw 69.4; stop 56.1; road 50.5; lane 50.8
+50000_CAM_ONLY; step 000116/162; eval_status: DAY; rtime 0.02; itime 0.58 (636.59 ms); loss 0.00040; iou_ev 53.0; m_map_iou 64.5; driv 88.3; carp 68.7; ped_cr 68.4; walkw 69.3; stop 55.8; road 50.2; lane 50.8
+50000_CAM_ONLY; step 000117/162; eval_status: DAY; rtime 0.02; itime 0.49 (635.37 ms); loss 0.00015; iou_ev 53.1; m_map_iou 64.4; driv 88.3; carp 68.7; ped_cr 68.1; walkw 69.2; stop 55.7; road 49.9; lane 50.9
+50000_CAM_ONLY; step 000118/162; eval_status: DAY; rtime 0.02; itime 0.53 (634.44 ms); loss 0.00012; iou_ev 53.2; m_map_iou 64.4; driv 88.3; carp 68.7; ped_cr 67.9; walkw 69.1; stop 55.6; road 49.9; lane 51.1
+50000_CAM_ONLY; step 000119/162; eval_status: DAY; rtime 0.01; itime 0.57 (633.91 ms); loss 0.00052; iou_ev 53.1; m_map_iou 64.4; driv 88.3; carp 68.7; ped_cr 67.9; walkw 69.0; stop 55.6; road 49.9; lane 51.2
+50000_CAM_ONLY; step 000120/162; eval_status: DAY; rtime 0.01; itime 0.52 (633.00 ms); loss 0.00039; iou_ev 53.0; m_map_iou 64.4; driv 88.3; carp 68.7; ped_cr 67.9; walkw 68.9; stop 55.6; road 49.9; lane 51.2
+50000_CAM_ONLY; step 000121/162; eval_status: DAY; rtime 0.03; itime 0.56 (632.40 ms); loss 0.00035; iou_ev 53.0; m_map_iou 64.3; driv 88.3; carp 68.7; ped_cr 67.9; walkw 68.9; stop 55.6; road 49.9; lane 51.2
+50000_CAM_ONLY; step 000122/162; eval_status: DAY; rtime 0.01; itime 0.55 (631.73 ms); loss 0.00070; iou_ev 53.0; m_map_iou 64.0; driv 88.3; carp 67.0; ped_cr 67.9; walkw 68.8; stop 55.5; road 49.7; lane 51.2
+50000_CAM_ONLY; step 000123/162; eval_status: DAY; rtime 0.01; itime 0.49 (630.59 ms); loss 0.00065; iou_ev 52.9; m_map_iou 63.8; driv 88.2; carp 65.9; ped_cr 67.9; walkw 68.7; stop 55.3; road 49.5; lane 51.1
+50000_CAM_ONLY; step 000124/162; eval_status: DAY; rtime 0.01; itime 0.50 (629.54 ms); loss 0.00068; iou_ev 52.9; m_map_iou 63.5; driv 88.1; carp 64.5; ped_cr 67.9; walkw 68.6; stop 55.1; road 49.4; lane 51.0
+50000_CAM_ONLY; step 000125/162; eval_status: DAY; rtime 0.01; itime 0.53 (628.76 ms); loss 0.00053; iou_ev 52.9; m_map_iou 63.3; driv 88.0; carp 63.8; ped_cr 67.9; walkw 68.5; stop 54.8; road 49.3; lane 51.0
+50000_CAM_ONLY; step 000126/162; eval_status: DAY; rtime 0.02; itime 0.52 (627.86 ms); loss 0.00042; iou_ev 52.9; m_map_iou 63.2; driv 87.9; carp 63.4; ped_cr 67.9; walkw 68.4; stop 54.6; road 49.3; lane 50.9
+50000_CAM_ONLY; step 000127/162; eval_status: DAY; rtime 0.01; itime 0.49 (626.81 ms); loss 0.00080; iou_ev 52.9; m_map_iou 63.0; driv 87.9; carp 62.6; ped_cr 67.9; walkw 68.3; stop 54.4; road 49.3; lane 50.9
+50000_CAM_ONLY; step 000128/162; eval_status: DAY; rtime 0.01; itime 0.53 (626.03 ms); loss 0.00068; iou_ev 53.0; m_map_iou 63.0; driv 87.8; carp 62.7; ped_cr 67.9; walkw 68.2; stop 54.3; road 49.3; lane 50.8
+50000_CAM_ONLY; step 000129/162; eval_status: DAY; rtime 0.02; itime 0.51 (625.14 ms); loss 0.00074; iou_ev 53.0; m_map_iou 63.0; driv 87.8; carp 63.2; ped_cr 67.9; walkw 68.1; stop 54.3; road 49.2; lane 50.8
+50000_CAM_ONLY; step 000130/162; eval_status: DAY; rtime 0.01; itime 0.53 (624.40 ms); loss 0.00087; iou_ev 53.0; m_map_iou 63.0; driv 87.7; carp 63.7; ped_cr 67.9; walkw 68.0; stop 54.1; road 49.1; lane 50.7
+50000_CAM_ONLY; step 000131/162; eval_status: DAY; rtime 0.01; itime 0.53 (623.67 ms); loss 0.00099; iou_ev 52.9; m_map_iou 63.0; driv 87.7; carp 64.0; ped_cr 67.9; walkw 67.9; stop 54.0; road 49.1; lane 50.7
+50000_CAM_ONLY; step 000132/162; eval_status: DAY; rtime 0.02; itime 0.51 (622.84 ms); loss 0.00093; iou_ev 52.8; m_map_iou 63.0; driv 87.7; carp 64.0; ped_cr 67.9; walkw 67.7; stop 54.0; road 49.1; lane 50.7
+50000_CAM_ONLY; step 000133/162; eval_status: DAY; rtime 0.02; itime 0.53 (622.16 ms); loss 0.00082; iou_ev 52.8; m_map_iou 63.0; driv 87.6; carp 64.4; ped_cr 67.9; walkw 67.7; stop 53.9; road 49.1; lane 50.6
+50000_CAM_ONLY; step 000134/162; eval_status: DAY; rtime 0.01; itime 0.54 (621.54 ms); loss 0.00066; iou_ev 52.9; m_map_iou 63.0; driv 87.6; carp 64.6; ped_cr 67.9; walkw 67.6; stop 53.8; road 49.0; lane 50.6
+50000_CAM_ONLY; step 000135/162; eval_status: DAY; rtime 0.01; itime 0.51 (620.68 ms); loss 0.00105; iou_ev 53.0; m_map_iou 63.0; driv 87.6; carp 64.9; ped_cr 67.9; walkw 67.5; stop 53.8; road 49.0; lane 50.5
+50000_CAM_ONLY; step 000136/162; eval_status: DAY; rtime 0.01; itime 0.51 (619.85 ms); loss 0.00083; iou_ev 53.2; m_map_iou 63.0; driv 87.6; carp 64.9; ped_cr 67.9; walkw 67.4; stop 53.7; road 49.0; lane 50.5
+50000_CAM_ONLY; step 000137/162; eval_status: DAY; rtime 0.04; itime 0.55 (619.38 ms); loss 0.00094; iou_ev 53.1; m_map_iou 62.9; driv 87.5; carp 64.8; ped_cr 67.9; walkw 67.3; stop 53.6; road 49.0; lane 50.4
+50000_CAM_ONLY; step 000138/162; eval_status: DAY; rtime 0.05; itime 0.52 (618.70 ms); loss 0.00082; iou_ev 53.1; m_map_iou 62.9; driv 87.4; carp 64.7; ped_cr 67.9; walkw 67.2; stop 53.6; road 49.0; lane 50.4
+50000_CAM_ONLY; step 000139/162; eval_status: DAY; rtime 0.01; itime 0.52 (617.97 ms); loss 0.00080; iou_ev 53.1; m_map_iou 62.8; driv 87.3; carp 64.6; ped_cr 67.9; walkw 67.1; stop 53.5; road 49.0; lane 50.3
+50000_CAM_ONLY; step 000140/162; eval_status: DAY; rtime 0.01; itime 0.55 (617.47 ms); loss 0.00100; iou_ev 53.0; m_map_iou 62.8; driv 87.3; carp 64.8; ped_cr 67.9; walkw 67.1; stop 53.5; road 49.0; lane 50.3
+50000_CAM_ONLY; step 000141/162; eval_status: DAY; rtime 0.01; itime 0.55 (616.96 ms); loss 0.00089; iou_ev 53.1; m_map_iou 62.8; driv 87.2; carp 65.0; ped_cr 67.9; walkw 67.0; stop 53.3; road 49.0; lane 50.2
+50000_CAM_ONLY; step 000142/162; eval_status: DAY; rtime 0.01; itime 0.57 (616.65 ms); loss 0.00079; iou_ev 53.1; m_map_iou 62.7; driv 87.1; carp 64.9; ped_cr 67.9; walkw 66.9; stop 53.0; road 49.0; lane 50.2
+50000_CAM_ONLY; step 000143/162; eval_status: DAY; rtime 0.02; itime 0.61 (616.60 ms); loss 0.00095; iou_ev 53.0; m_map_iou 62.6; driv 87.0; carp 64.8; ped_cr 67.9; walkw 66.7; stop 52.8; road 49.0; lane 50.1
+50000_CAM_ONLY; step 000144/162; eval_status: DAY; rtime 0.02; itime 0.54 (616.06 ms); loss 0.00082; iou_ev 53.1; m_map_iou 62.5; driv 87.0; carp 64.8; ped_cr 67.9; walkw 66.6; stop 52.5; road 49.0; lane 50.0
+50000_CAM_ONLY; step 000145/162; eval_status: DAY; rtime 0.01; itime 0.55 (615.60 ms); loss 0.00084; iou_ev 53.2; m_map_iou 62.5; driv 86.9; carp 64.7; ped_cr 67.9; walkw 66.5; stop 52.3; road 49.0; lane 50.0
+50000_CAM_ONLY; step 000146/162; eval_status: DAY; rtime 0.01; itime 0.61 (615.54 ms); loss 0.00100; iou_ev 53.3; m_map_iou 62.4; driv 86.9; carp 64.9; ped_cr 67.9; walkw 66.4; stop 52.0; road 49.0; lane 50.0
+50000_CAM_ONLY; step 000147/162; eval_status: DAY; rtime 0.02; itime 0.41 (614.12 ms); loss 0.00072; iou_ev 53.4; m_map_iou 62.4; driv 86.8; carp 65.1; ped_cr 67.9; walkw 66.3; stop 52.0; road 49.0; lane 49.9
+50000_CAM_ONLY; step 000148/162; eval_status: DAY; rtime 0.01; itime 0.37 (612.46 ms); loss 0.00088; iou_ev 53.5; m_map_iou 62.4; driv 86.8; carp 65.4; ped_cr 67.9; walkw 66.2; stop 51.9; road 49.0; lane 49.9
+50000_CAM_ONLY; step 000149/162; eval_status: DAY; rtime 0.01; itime 0.37 (610.81 ms); loss 0.00073; iou_ev 53.5; m_map_iou 62.4; driv 86.7; carp 65.7; ped_cr 67.9; walkw 66.1; stop 51.8; road 49.0; lane 49.8
+50000_CAM_ONLY; step 000150/162; eval_status: DAY; rtime 0.01; itime 0.37 (609.19 ms); loss 0.00069; iou_ev 53.6; m_map_iou 62.4; driv 86.7; carp 66.1; ped_cr 67.9; walkw 65.9; stop 51.8; road 49.0; lane 49.7
+50000_CAM_ONLY; step 000151/162; eval_status: DAY; rtime 0.01; itime 0.37 (607.61 ms); loss 0.00095; iou_ev 53.6; m_map_iou 62.4; driv 86.7; carp 66.5; ped_cr 67.9; walkw 65.8; stop 51.6; road 48.9; lane 49.6
+50000_CAM_ONLY; step 000152/162; eval_status: DAY; rtime 0.01; itime 0.37 (606.03 ms); loss 0.00120; iou_ev 53.6; m_map_iou 62.4; driv 86.7; carp 66.8; ped_cr 67.9; walkw 65.7; stop 51.5; road 48.8; lane 49.6
+50000_CAM_ONLY; step 000153/162; eval_status: DAY; rtime 0.01; itime 0.37 (604.47 ms); loss 0.00118; iou_ev 53.6; m_map_iou 62.4; driv 86.7; carp 67.2; ped_cr 67.9; walkw 65.5; stop 51.3; road 48.6; lane 49.5
+50000_CAM_ONLY; step 000154/162; eval_status: DAY; rtime 0.01; itime 0.37 (602.92 ms); loss 0.00119; iou_ev 53.7; m_map_iou 62.3; driv 86.7; carp 67.5; ped_cr 67.9; walkw 65.4; stop 51.1; road 48.4; lane 49.4
+50000_CAM_ONLY; step 000155/162; eval_status: DAY; rtime 0.01; itime 0.36 (601.38 ms); loss 0.00095; iou_ev 53.7; m_map_iou 62.3; driv 86.7; carp 67.9; ped_cr 67.9; walkw 65.3; stop 50.9; road 48.2; lane 49.3
+50000_CAM_ONLY; step 000156/162; eval_status: DAY; rtime 0.01; itime 0.36 (599.85 ms); loss 0.00088; iou_ev 53.7; m_map_iou 62.3; driv 86.7; carp 68.3; ped_cr 67.9; walkw 65.1; stop 50.8; road 48.0; lane 49.2
+50000_CAM_ONLY; step 000157/162; eval_status: DAY; rtime 0.01; itime 0.36 (598.34 ms); loss 0.00105; iou_ev 53.7; m_map_iou 62.2; driv 86.7; carp 68.6; ped_cr 67.9; walkw 65.0; stop 50.6; road 47.8; lane 49.1
+50000_CAM_ONLY; step 000158/162; eval_status: DAY; rtime 0.01; itime 0.36 (596.86 ms); loss 0.00092; iou_ev 53.7; m_map_iou 62.2; driv 86.7; carp 68.9; ped_cr 67.9; walkw 64.8; stop 50.4; road 47.6; lane 49.0
+50000_CAM_ONLY; step 000159/162; eval_status: DAY; rtime 0.01; itime 0.36 (595.39 ms); loss 0.00098; iou_ev 53.6; m_map_iou 62.1; driv 86.7; carp 69.0; ped_cr 67.9; walkw 64.7; stop 50.2; road 47.5; lane 48.9
+50000_CAM_ONLY; step 000160/162; eval_status: DAY; rtime 0.01; itime 0.36 (593.94 ms); loss 0.00111; iou_ev 53.6; m_map_iou 62.0; driv 86.6; carp 69.1; ped_cr 67.9; walkw 64.5; stop 50.1; road 47.4; lane 48.8
+50000_CAM_ONLY; step 000161/162; eval_status: DAY; rtime 0.01; itime 0.36 (592.51 ms); loss 0.00119; iou_ev 53.6; m_map_iou 62.0; driv 86.6; carp 69.0; ped_cr 67.9; walkw 64.3; stop 50.0; road 47.3; lane 48.7
+50000_CAM_ONLY; step 000162/162; eval_status: DAY; rtime 0.01; itime 0.36 (591.10 ms); loss 0.00133; iou_ev 53.5; m_map_iou 61.9; driv 86.6; carp 69.0; ped_cr 67.9; walkw 64.2; stop 49.8; road 47.3; lane 48.6
+##################   FINAL RESULTS   ###################
+##################   OBJ IOUs  ###################
+Traceback (most recent call last):
+  File "/scratch/gpfs/el5267/CamToBEV/eval.py", line 970, in <module>
+    main(**config)
+  File "/scratch/gpfs/el5267/CamToBEV/eval.py", line 946, in main
+    display_final_results(train_task=train_task, dset=dset, obj_metrics=obj_metrics, day_metrics=day_metrics,
+  File "/scratch/gpfs/el5267/CamToBEV/eval.py", line 127, in display_final_results
+    ["RAIN", format_value(rain_metrics['obj_iou']), format_value(rain_metrics['obj_0_20_iou']),
+KeyError: 'obj_iou'

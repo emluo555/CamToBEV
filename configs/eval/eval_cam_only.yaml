@@ -6,12 +6,12 @@ log_freq: 100
 shuffle: false
 dset: 'trainval'
 batch_size: 1
-nworkers: 8
+nworkers: 12
 do_drn_val_split: true
 
 # Directories
-data_dir: '/datasets/nuscenes'
-custom_dataroot: 'datasets/scaled_images'
+data_dir: './datasets/nuscenes-trainval'
+custom_dataroot: './datasets/nuscenes-trainval/cleaned_images'
 log_dir: 'logs_nuscenes'
 init_dir: 'model_checkpoints/CAM_ONLY'
 ignore_load: null
@@ -32,7 +32,7 @@ use_radar_filters: false
 use_radar_encoder: false
 use_metaradar: false
 use_shallow_metadata: false
-use_pre_scaled_imgs: false
+use_pre_scaled_imgs: true # for custom thing
 use_obj_layer_only_on_map: true
 init_query_with_image_feats: true
 do_rgbcompress: true

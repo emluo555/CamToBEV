@@ -1,0 +1,250 @@
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/attention.py:26: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/swiglu_ffn.py:44: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/dataloader.py:560: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+model_name 50000_CAM_ONLY_VIS_EVAL
+resolution: [448, 896]
+loading nuscenes...
+version =  mini
+======
+Loading NuScenes tables for version v1.0-mini...
+23 category,
+8 attribute,
+4 visibility,
+911 instance,
+12 sensor,
+120 calibrated_sensor,
+31206 ego_pose,
+8 log,
+10 scene,
+404 sample,
+31206 sample_data,
+18538 sample_annotation,
+4 map,
+Done loading in 0.447 seconds.
+======
+Reverse indexing ...
+Done reverse indexing in 0.1 seconds.
+======
+loading Maps...
+map_folder  ./datasets/nuscenes
+indices (8, 42)
+NuscData: 8 samples. Split: train.
+                   Augmentation Conf: {'crop_offset': 0, 'resize_lim': [1.0, 1.0], 'final_dim': [448, 896], 'H': 900, 'W': 1600, 'cams': ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK', 'CAM_BACK_RIGHT'], 'ncams': 6}
+indices (4, 42)
+NuscData: 4 samples. Split: val.
+                   Augmentation Conf: {'crop_offset': 0, 'resize_lim': [1.0, 1.0], 'final_dim': [448, 896], 'H': 900, 'W': 1600, 'cams': ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK', 'CAM_BACK_RIGHT'], 'ncams': 6}
+data ready
+/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+Trainable parameters: 37313074
+Non-trainable parameters: 86579712
+Total parameters (trainable + fixed) 123892786
+reading ckpt from model_checkpoints/CAM_ONLY
+...found checkpoint model_checkpoints/CAM_ONLY/model-000050000.pth
+checkpoint loaded...
+model set to eval mode...
+got SCENE: 1
+Sample: 0
+Sample: 1
+Sample: 2
+Sample: 3
+Sample: 4
+Sample: 5
+Sample: 6
+Sample: 7
+Sample: 8
+Sample: 9
+Sample: 10
+Sample: 11
+Sample: 12
+Sample: 13
+Sample: 14
+Sample: 15
+Sample: 16
+Sample: 17
+Sample: 18
+Sample: 19
+Sample: 20
+Sample: 21
+Sample: 22
+Sample: 23
+Sample: 24
+Sample: 25
+Sample: 26
+Sample: 27
+Sample: 28
+Sample: 29
+Sample: 30
+Sample: 31
+Sample: 32
+Sample: 33
+Sample: 34
+Sample: 35
+Sample: 36
+Sample: 37
+Sample: 38
+Sample: 39
+50000_CAM_ONLY_VIS_EVAL; scene 0001/4; eval_status: DAY; rtime 11.775; itime 67.21; loss 0.00033; iou_ev 57.2; m_map_iou 65.3; driv 90.6; carp 68.7; ped_cr 68.8; walkw 75.7; stop 37.1; road 59.9; lane 56.5
+got SCENE: 2
+Sample: 0
+Sample: 1
+Sample: 2
+Sample: 3
+Sample: 4
+Sample: 5
+Sample: 6
+Sample: 7
+Sample: 8
+Sample: 9
+Sample: 10
+Sample: 11
+Sample: 12
+Sample: 13
+Sample: 14
+Sample: 15
+Sample: 16
+Sample: 17
+Sample: 18
+Sample: 19
+Sample: 20
+Sample: 21
+Sample: 22
+Sample: 23
+Sample: 24
+Sample: 25
+Sample: 26
+Sample: 27
+Sample: 28
+Sample: 29
+Sample: 30
+Sample: 31
+Sample: 32
+Sample: 33
+Sample: 34
+Sample: 35
+Sample: 36
+Sample: 37
+Sample: 38
+Sample: 39
+Sample: 40
+50000_CAM_ONLY_VIS_EVAL; scene 0002/4; eval_status: DAY; rtime 0.414; itime 48.68; loss 0.00068; iou_ev 53.7; m_map_iou 69.4; driv 90.7; carp 68.7; ped_cr 73.0; walkw 76.7; stop 64.0; road 59.9; lane 52.9
+got SCENE: 3
+Sample: 0
+Sample: 1
+Sample: 2
+Sample: 3
+Sample: 4
+Sample: 5
+Sample: 6
+Sample: 7
+Sample: 8
+Sample: 9
+Sample: 10
+Sample: 11
+Sample: 12
+Sample: 13
+Sample: 14
+Sample: 15
+Sample: 16
+Sample: 17
+Sample: 18
+Sample: 19
+Sample: 20
+Sample: 21
+Sample: 22
+Sample: 23
+Sample: 24
+Sample: 25
+Sample: 26
+Sample: 27
+Sample: 28
+Sample: 29
+Sample: 30
+Sample: 31
+Sample: 32
+Sample: 33
+Sample: 34
+Sample: 35
+Sample: 36
+Sample: 37
+Sample: 38
+Sample: 39
+50000_CAM_ONLY_VIS_EVAL; scene 0003/4; eval_status: DAY; rtime 0.325; itime 47.44; loss 0.00048; iou_ev 53.0; m_map_iou 64.3; driv 88.3; carp 68.7; ped_cr 67.9; walkw 68.9; stop 55.6; road 49.9; lane 51.2
+got SCENE: 4
+Sample: 0
+Sample: 1
+Sample: 2
+Sample: 3
+Sample: 4
+Sample: 5
+Sample: 6
+Sample: 7
+Sample: 8
+Sample: 9
+Sample: 10
+Sample: 11
+Sample: 12
+Sample: 13
+Sample: 14
+Sample: 15
+Sample: 16
+Sample: 17
+Sample: 18
+Sample: 19
+Sample: 20
+Sample: 21
+Sample: 22
+Sample: 23
+Sample: 24
+Sample: 25
+Sample: 26
+Sample: 27
+Sample: 28
+Sample: 29
+Sample: 30
+Sample: 31
+Sample: 32
+Sample: 33
+Sample: 34
+Sample: 35
+Sample: 36
+Sample: 37
+Sample: 38
+Sample: 39
+Sample: 40
+50000_CAM_ONLY_VIS_EVAL; scene 0004/4; eval_status: DAY; rtime 0.264; itime 43.23; loss 0.00088; iou_ev 53.5; m_map_iou 61.9; driv 86.6; carp 69.0; ped_cr 67.9; walkw 64.2; stop 49.8; road 47.3; lane 48.6
+##################   FINAL RESULTS   ###################
+##################   OBJ IOUs  ###################
++-----+--------------+---------------+----------------+----------------+
+|     | mean obj_IoU | 0-20m obj_IoU | 20-35m obj_IoU | 35-50m obj_IoU |
++-----+--------------+---------------+----------------+----------------+
+| ALL |    53.453    |    72.068     |     44.401     |     32.903     |
+| DAY |    53.453    |    72.068     |     44.401     |     32.903     |
++-----+--------------+---------------+----------------+----------------+
+##############################################################
+##################   MAP IOUs (UNIFORM THRESHOLD = 40%) ###################
++-----+--------------+--------------+-------------+---------------+-------------+---------------+------------------+------------------+
+|     | mean map_IoU | drivable_IoU | carpark_IoU | ped_cross_IoU | walkway_IoU | stop_line_IoU | road_divider_IoU | lane_divider_IoU |
++-----+--------------+--------------+-------------+---------------+-------------+---------------+------------------+------------------+
+| ALL |    61.904    |    86.603    |   69.002    |    67.883     |   64.187    |    49.768     |      47.313      |      48.572      |
+| DAY |    61.904    |    86.603    |   69.002    |    67.883     |   64.187    |    49.768     |      47.313      |      48.572      |
++-----+--------------+--------------+-------------+---------------+-------------+---------------+------------------+------------------+
+##################   BEST MAP IOUs (CLASS-SPECIFIC THRESHOLD)  ###################
++-----+--------------+--------------+-------------+---------------+-------------+---------------+------------------+------------------+
+|     | best map_IoU | drivable_IoU | carpark_IoU | ped_cross_IoU | walkway_IoU | stop_line_IoU | road_divider_IoU | lane_divider_IoU |
++-----+--------------+--------------+-------------+---------------+-------------+---------------+------------------+------------------+
+| ALL |    61.964    |    86.603    |   69.002    |    67.883     |   64.187    |    49.768     |      47.313      |      48.993      |
+| DAY |    61.964    |    86.603    |   69.002    |    67.883     |   64.187    |    49.768     |      47.313      |      48.993      |
++-----+--------------+--------------+-------------+---------------+-------------+---------------+------------------+------------------+
+##################   BEST CLASS-SPECIFIC THRESHOLD ###################
++-----+-------------+------------+--------------+------------+--------------+-----------------+-----------------+
+|     | drivable_th | carpark_th | ped_cross_th | walkway_th | stop_line_th | road_divider_th | lane_divider_th |
++-----+-------------+------------+--------------+------------+--------------+-----------------+-----------------+
+| ALL |    40.0     |    40.0    |     40.0     |    40.0    |     40.0     |      40.0       |      35.0       |
+| DAY |    40.0     |    40.0    |     40.0     |    40.0    |     40.0     |      40.0       |      35.0       |
++-----+-------------+------------+--------------+------------+--------------+-----------------+-----------------+

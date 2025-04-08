@@ -87,7 +87,8 @@ def grab_convert_store_imgs(version, dataroot, is_train, target_dir, new_w, new_
             new_imgname = os.path.join(new_target_dir, samp['filename'])
 
             img = Image.open(imgname) 
-            img_scaled = img.resize(size=final_dim, resample=Image.NEAREST)
+            img_scaled=img
+            #img_scaled = img.resize(size=final_dim, resample=Image.NEAREST)
 
             rgb_img =  img_scaled.convert("RGB")
             img_np = np.array(rgb_img)  # Convert to NumPy array
@@ -136,9 +137,9 @@ def lowlight_enhancement(img_np, model):
 if __name__ == '__main__':
     version = "trainval"  # specifies the split that is loaded - mini for now
     print("Version for conversion: '%s' " % version)
-    dataroot = "./datasets/nuscenes/"  # path to NuScenes directory
+    dataroot = "./datasets/nuscenes-trainval/"  # path to NuScenes directory
     print("Data is taken from '%s'" % dataroot)
-    target_dir = "./datasets/nuscenes/cleaned_images"   # custom data path
+    target_dir = "./datasets/nuscenes-trainval/cleaned_images"   # custom data path
     if not os.path.exists(target_dir):
         os.mkdir(target_dir)
         print("Directory '%s' created" % target_dir)

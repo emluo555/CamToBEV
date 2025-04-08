@@ -247,6 +247,8 @@ def add_ego2(bx, dx):
 
 
 def get_nusc_maps(map_folder):
+    print("map_folder ", map_folder)
+
     nusc_maps = {map_name: NuScenesMap(dataroot=map_folder,
                                        map_name=map_name) for map_name in [
                      "singapore-hollandvillage",
@@ -772,7 +774,7 @@ class NuscData(torch.utils.data.Dataset):
                 img = Image.open(imgname)
                 W, H = img.size
             else:
-                custom_path = os.path.join(self.custom_dataroot, '#CUSTOM_RES#')  # TODO: adapt to rescaled imgs folder
+                custom_path = os.path.join(self.custom_dataroot, '448_896')  # TODO: adapt to rescaled imgs folder, maybe just change this to config
                 imgname = os.path.join(custom_path, samp['filename'])
                 img = Image.open(imgname)
                 W, H = (1600, 900)  # img.size must be fixed to keep the rest of the code working
@@ -1208,6 +1210,7 @@ def compile_data(version, dataroot, data_aug_conf, centroid, bounds, res_3d, bsz
     if rank == 0 or rank is None:
         print_details = True
         print('loading nuscenes...')
+    print("version = ", version)
     nusc = NuScenes(version='v1.0-{}'.format(version),
                     dataroot=dataroot,
                     verbose=print_details)
@@ -1215,30 +1218,30 @@ def compile_data(version, dataroot, data_aug_conf, centroid, bounds, res_3d, bsz
         print('loading Maps...')
     nusc_maps = get_nusc_maps(map_folder=dataroot)
 
-    traindata = VizData(
-        nusc,
-        nusc_maps=nusc_maps,
-        is_train=True,
-        data_aug_conf=data_aug_conf,
-        nsweeps=nsweeps,
-        centroid=centroid,
-        bounds=bounds,
-        res_3d=res_3d,
-        seqlen=seqlen,
-        refcam_id=refcam_id,
-        get_tids=get_tids,
-        temporal_aug=temporal_aug,
-        use_radar_filters=use_radar_filters,
-        do_shuffle_cams=do_shuffle_cams,
-        radar_encoder_type=radar_encoder_type,
-        use_shallow_metadata=use_shallow_metadata,
-        use_pre_scaled_imgs=use_pre_scaled_imgs,
-        custom_dataroot=custom_dataroot,
-        use_obj_layer_only_on_map=use_obj_layer_only_on_map,
-        vis_full_scenes=vis_full_scenes,
-        use_radar_occupancy_map=use_radar_occupancy_map,
-        print_details=print_details
-    )
+    # traindata = VizData(
+    #     nusc,
+    #     nusc_maps=nusc_maps,
+    #     is_train=True,
+    #     data_aug_conf=data_aug_conf,
+    #     nsweeps=nsweeps,
+    #     centroid=centroid,
+    #     bounds=bounds,
+    #     res_3d=res_3d,
+    #     seqlen=seqlen,
+    #     refcam_id=refcam_id,
+    #     get_tids=get_tids,
+    #     temporal_aug=temporal_aug,
+    #     use_radar_filters=use_radar_filters,
+    #     do_shuffle_cams=do_shuffle_cams,
+    #     radar_encoder_type=radar_encoder_type,
+    #     use_shallow_metadata=use_shallow_metadata,
+    #     use_pre_scaled_imgs=use_pre_scaled_imgs,
+    #     custom_dataroot=custom_dataroot,
+    #     use_obj_layer_only_on_map=use_obj_layer_only_on_map,
+    #     vis_full_scenes=vis_full_scenes,
+    #     use_radar_occupancy_map=use_radar_occupancy_map,
+    #     print_details=print_details
+    # )
     valdata = VizData(
         nusc,
         nusc_maps=nusc_maps,
@@ -1274,19 +1277,19 @@ def compile_data(version, dataroot, data_aug_conf, centroid, bounds, res_3d, bsz
         g = torch.Generator()
         g.manual_seed(125 + rank)
 
-        distributed_train_sampler = DistributedSampler(dataset=traindata, shuffle=shuffle)
+        #distributed_train_sampler = DistributedSampler(dataset=traindata, shuffle=shuffle)
         distributed_val_sampler = DistributedSampler(dataset=valdata, shuffle=False)
 
-        trainloader = torch.utils.data.DataLoader(
-            traindata,
-            batch_size=bsz,
-            shuffle=False,  # formerly true  --> now handled by distributed sampler
-            sampler=distributed_train_sampler,
-            num_workers=nworkers,
-            drop_last=True,
-            worker_init_fn=my_seed_worker,
-            generator=g,
-            pin_memory=False)
+        # trainloader = torch.utils.data.DataLoader(
+        #     traindata,
+        #     batch_size=bsz,
+        #     shuffle=False,  # formerly true  --> now handled by distributed sampler
+        #     sampler=distributed_train_sampler,
+        #     num_workers=nworkers,
+        #     drop_last=True,
+        #     worker_init_fn=my_seed_worker,
+        #     generator=g,
+        #     pin_memory=False)
         valloader = torch.utils.data.DataLoader(
             valdata,
             batch_size=bsz,
@@ -1296,14 +1299,14 @@ def compile_data(version, dataroot, data_aug_conf, centroid, bounds, res_3d, bsz
             drop_last=True,
             pin_memory=False)
     else:
-        trainloader = torch.utils.data.DataLoader(
-            traindata,
-            batch_size=bsz,
-            shuffle=shuffle,  # formerly true
-            num_workers=nworkers,
-            drop_last=True,
-            worker_init_fn=worker_rnd_init,
-            pin_memory=False)
+        # trainloader = torch.utils.data.DataLoader(
+        #     traindata,
+        #     batch_size=bsz,
+        #     shuffle=shuffle,  # formerly true
+        #     num_workers=nworkers,
+        #     drop_last=True,
+        #     worker_init_fn=worker_rnd_init,
+        #     pin_memory=False)
         valloader = torch.utils.data.DataLoader(
             valdata,
             batch_size=bsz,
@@ -1314,4 +1317,4 @@ def compile_data(version, dataroot, data_aug_conf, centroid, bounds, res_3d, bsz
 
     if print_details:
         print('data ready')
-    return trainloader, valloader
+    return None, valloader

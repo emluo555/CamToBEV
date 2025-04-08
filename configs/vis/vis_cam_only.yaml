@@ -3,7 +3,7 @@ exp_name: 'CAM_ONLY_VIS_EVAL'
 
 # Eval parameters
 log_freq: 100
-dset: 'trainval'
+dset: 'mini'
 batch_size: 1  # keep it at 1 for the moment
 timesteps: 40
 vis_full_scenes: true
@@ -11,8 +11,8 @@ nworkers: 8
 do_drn_val_split: true
 
 # Directories
-data_dir: '/datasets/nuscenes'
-custom_dataroot: 'datasets/scaled_images'
+data_dir: './datasets/nuscenes'
+custom_dataroot: './datasets/scaled_images'
 log_dir: 'logs_nuscenes'
 img_dir: 'vis_eval'
 init_dir: 'model_checkpoints/CAM_ONLY'

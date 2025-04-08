@@ -1,0 +1,78 @@
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/attention.py:26: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+/scratch/gpfs/el5267/CamToBEV/nets/dino_v2_with_adapter/dino_v2/layers/swiglu_ffn.py:44: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/dataloader.py:560: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+cuda:0
+model_name 50000_CAM_ONLY
+resolution: [448, 896]
+loading nuscenes...
+version =  mini
+======
+Loading NuScenes tables for version v1.0-mini...
+23 category,
+8 attribute,
+4 visibility,
+911 instance,
+12 sensor,
+120 calibrated_sensor,
+31206 ego_pose,
+8 log,
+10 scene,
+404 sample,
+31206 sample_data,
+18538 sample_annotation,
+4 map,
+Done loading in 0.391 seconds.
+======
+Reverse indexing ...
+Done reverse indexing in 0.1 seconds.
+======
+loading Maps...
+map_folder  ./datasets/nuscenes
+indices (323, 1)
+NuscData: 323 samples. Split: train.
+                   Augmentation Conf: {'final_dim': [448, 896], 'cams': ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK', 'CAM_BACK_RIGHT'], 'ncams': 6}
+indices (162, 1)
+NuscData: 162 samples. Split: val.
+                   Augmentation Conf: {'final_dim': [448, 896], 'cams': ['CAM_FRONT_LEFT', 'CAM_FRONT', 'CAM_FRONT_RIGHT', 'CAM_BACK_LEFT', 'CAM_BACK', 'CAM_BACK_RIGHT'], 'ncams': 6}
+data ready
+Trainable parameters: 37313074
+Non-trainable parameters: 86579712
+Total parameters (trainable + fixed) 123892786
+reading ckpt from model_checkpoints/CAM_ONLY
+...found checkpoint model_checkpoints/CAM_ONLY/model-000050000.pth
+Traceback (most recent call last):
+  File "/scratch/gpfs/el5267/CamToBEV/eval-mini.py", line 971, in <module>
+    main(**config)
+  File "/scratch/gpfs/el5267/CamToBEV/eval-mini.py", line 857, in main
+    sample = next(val_iterloader)
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 633, in __next__
+    data = self._next_data()
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1345, in _next_data
+    return self._process_data(data)
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1371, in _process_data
+    data.reraise()
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/_utils.py", line 644, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/scratch/gpfs/el5267/CamToBEV/nuscenes_data.py", line 1145, in __getitem__
+    self.get_single_item(index_t, cams, refcam_id=refcam_id)
+  File "/scratch/gpfs/el5267/CamToBEV/nuscenes_data.py", line 961, in get_single_item
+    imgs, rots, trans, intrins = self.get_image_data(rec, cams)
+  File "/scratch/gpfs/el5267/CamToBEV/nuscenes_data.py", line 779, in get_image_data
+    img = Image.open(imgname)
+  File "/home/el5267/miniconda3/envs/bevcar/lib/python3.10/site-packages/PIL/Image.py", line 3465, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: './datasets/scaled_images/448_896/samples/CAM_FRONT_LEFT/n008-2018-08-01-15-16-36-0400__CAM_FRONT_LEFT__1533151603504799.jpg'
+

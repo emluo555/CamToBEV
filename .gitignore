@@ -1,0 +1,15 @@
+datasets/
+*.zip
+*.tgz
+*.pth
+**/__pycache__/
+*.py[cod]
+
+# Python egg metadata
+*.egg-info/
+
+# Build artifacts
+build/
+dist/
+
+logs_nuscenes/
